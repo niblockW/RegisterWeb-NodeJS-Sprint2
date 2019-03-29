@@ -47,8 +47,8 @@ export let execute = (employeeSaveRequest: EmployeeSaveRequest): Bluebird<Comman
 		lastName: employeeSaveRequest.lastName,
 		firstName: employeeSaveRequest.firstName,
 		managerId: employeeSaveRequest.managerId,
-		password: EmployeeHelper.hashString(employeeSaveRequest.password),
 		classification: <EmployeeClassification>employeeSaveRequest.classification,
+		password: Buffer.from(EmployeeHelper.hashString(employeeSaveRequest.password))
 	};
 
 	return EmployeeRepository.create(employeeToCreate)

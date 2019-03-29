@@ -22,7 +22,7 @@ const buildUpdateObject = (employeeSaveRequest: EmployeeSaveRequest): Object => 
 		updateObject.firstName = employeeSaveRequest.firstName;
 	}
 	if ((employeeSaveRequest.password != null) && (employeeSaveRequest.password.trim() !== "")) {
-		updateObject.password = EmployeeHelper.hashString(employeeSaveRequest.password);
+		updateObject.password = Buffer.from(EmployeeHelper.hashString(employeeSaveRequest.password));
 	}
 	if (employeeSaveRequest.classification != null) {
 		updateObject.classification = <EmployeeClassification>employeeSaveRequest.classification;

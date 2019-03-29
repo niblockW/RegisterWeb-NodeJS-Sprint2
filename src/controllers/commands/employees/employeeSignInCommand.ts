@@ -75,7 +75,7 @@ export let execute = (signInRequest: SignInRequest, session?: Express.Session): 
 	return EmployeeRepository.queryByEmployeeId(+signInRequest.employeeId)
 		.then((existingEmployee: (EmployeeInstance | null)): Bluebird<ActiveUserInstance> => {
 			if (!existingEmployee ||
-				(EmployeeHelper.hashString(signInRequest.password) !== existingEmployee.password)) {
+				(EmployeeHelper.hashString(signInRequest.password) !== existingEmployee.password.toString())) {
 
 				return Bluebird.reject(<CommandResponse<ActiveUser>>{
 					status: 401,

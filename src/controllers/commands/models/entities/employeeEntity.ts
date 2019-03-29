@@ -10,7 +10,7 @@ export interface EmployeeAttributes {
 	id?: string;
 	active: boolean;
 	lastName: string;
-	password: string;
+	password: Buffer;
 	createdOn?: Date;
 	firstName: string;
 	managerId?: string;
@@ -22,7 +22,7 @@ export interface EmployeeInstance extends Sequelize.Instance<EmployeeAttributes>
 	id: string;
 	active: boolean;
 	lastName: string;
-	password: string;
+	password: Buffer;
 	createdOn: Date;
 	firstName: string;
 	managerId: string;
@@ -54,9 +54,9 @@ export let EmployeeEntity: Sequelize.Model<EmployeeInstance, EmployeeAttributes>
 			},
 			password: <Sequelize.DefineAttributeColumnOptions>{
 				field: EmployeeFieldName.Password,
-				type: Sequelize.STRING,
+				type: Sequelize.BLOB,
 				allowNull: false,
-				defaultValue: ""
+				defaultValue: Buffer.alloc(0)
 			},
 			createdOn: <Sequelize.DefineAttributeColumnOptions>{
 				field: EmployeeFieldName.CreatedOn,
