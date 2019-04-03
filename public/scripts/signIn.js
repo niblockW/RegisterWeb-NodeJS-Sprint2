@@ -12,7 +12,7 @@ function validateForm() {
 
 	const password = $("input[name='password'][type='password']").val();
 	if (!password || (password.trim() === "")) {
-		displayError("Please provide a valid password. It may not be blank.");
+		displayError("Please provide a valid password.");
 		$("input[name='password'][type='password']").focus().select();
 		return false;
 	}
