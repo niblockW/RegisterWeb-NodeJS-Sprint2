@@ -26,7 +26,7 @@ export enum RouteLookup {
 	ProductIdParameter = "/:productId",
 	EmployeeIdParameter = "/:employeeId",
 
-	//MIGHT NEED TO ADD SOMETHING FOR TRANSACTION
+	// MIGHT NEED TO ADD SOMETHING FOR TRANSACTION
 
 	// End page routing - parameters
 	// End page routing
