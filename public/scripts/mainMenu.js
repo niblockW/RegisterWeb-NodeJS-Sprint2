@@ -1,5 +1,5 @@
 $(document).on("click", "#startTransactionButton", () => {
-	displayError("Functionality has not been implemented yet.");
+	window.location.assign("/transaction")
 });
 
 $(document).on("click", "#viewProductsButton", () => {
