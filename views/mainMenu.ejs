@@ -2,7 +2,7 @@
 
 <head>
 	<title>Register - Main Menu</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="/styles/master.css">
 
@@ -16,7 +16,7 @@
 	<div class="header">
 		<h1 class="primary-message">Main Menu</h1>
 	</div>
-		
+
 	<div id="main" class="main">
 		<div id="error" <% if (!locals.errorMessage || (locals.errorMessage === "")) { %> class="hidden" <% } %>>
 			<h4 id="errorMessage" class="error-message">
@@ -28,7 +28,7 @@
 
 		<div class="mainMenuActionsWrapper">
 			<br />
-			<button id="startTransactionButton" type="button" class="action" title="Functionality Not Available" disabled>Start Transaction</button>
+			<button id="startTransactionButton" type="button" class="action" title="Functionality Not Available" >Start Transaction</button>
 			<br /><br />
 			<button id="viewProductsButton" type="button" class="action">View Products</button>
 			<div <% if (!locals.isElevatedUser) { %>class="hidden"<% } %>>
@@ -61,7 +61,7 @@
 	<div class="footer">
 		<img id="signOutImage" src="/images/Sign-Out.png" alt="Sign Out" class="footer" />
 	</div>
-		
+
 </body>
 
 </html>
